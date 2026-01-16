@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="自动收集小红书上所有AI相关的帖子">
+    <meta name="theme-color" content="#FF2442">
+    <title>小红书AI收集器</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icons/icon-192.png">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 顶部状态栏 -->
+        <header class="header">
+            <div class="logo">
+                <h1>🤖 小红书AI收集器</h1>
+            </div>
+            <div class="status-bar">
+                <div class="status-item">
+                    <span class="status-label">状态:</span>
+                    <span id="status" class="status-text">准备就绪</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">已收集:</span>
+                    <span id="collected-count" class="count-badge">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <!-- 左侧：浏览器窗口 -->
+            <div class="browser-panel">
+                <div class="browser-toolbar">
+                    <input type="text" id="url-input" class="url-input" 
+                           value="https://www.xiaohongshu.com/search_result?keyword=AI" 
+                           placeholder="输入小红书网址...">
+                    <button id="load-btn" class="btn btn-primary">加载</button>
+                </div>
+                
+                <div class="browser-notice">
+                    <p>⚠️ 由于浏览器安全限制，请按以下步骤操作：</p>
+                    <ol>
+                        <li>点击下方"打开小红书"按钮</li>
+                        <li>在新窗口中登录您的小红书账号</li>
+                        <li>返回此页面，点击"开始收集"</li>
+                        <li>应用会自动分析并收集AI相关帖子</li>
+                    </ol>
+                </div>
+
+                <div class="browser-actions">
+                    <button id="open-xhs-btn" class="btn btn-large btn-primary">
+                        🚀 打开小红书
+                    </button>
+                    <p class="hint">在新窗口中打开小红书，登录后返回此页面</p>
+                </div>
+            </div>
+
+            <!-- 右侧：收集列表 -->
+            <div class="collection-panel">
+                <div class="panel-header">
+                    <h2>📋 已收集的帖子</h2>
+                    <div class="panel-actions">
+                        <button id="export-btn" class="btn btn-small">导出</button>
+                        <button id="clear-btn" class="btn btn-small btn-danger">清空</button>
+                    </div>
+                </div>
+                
+                <div id="posts-list" class="posts-list">
+                    <div class="empty-state">
+                        <div class="empty-icon">📭</div>
+                        <p>还没有收集任何帖子</p>
+                        <p class="empty-hint">点击"开始收集"按钮开始收集AI相关帖子</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 底部控制栏 -->
+        <footer class="footer">
+            <div class="controls">
+                <button id="start-btn" class="btn btn-action">
+                    ▶️ 开始收集
+                </button>
+                <button id="stop-btn" class="btn btn-action" disabled>
+                    ⏸️ 停止收集
+                </button>
+                <button id="manual-add-btn" class="btn btn-secondary">
+                    ➕ 手动添加
+                </button>
+            </div>
+            <div class="footer-info">
+                <p>⚠️ 仅供学习研究使用 | 请遵守小红书服务条款</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 手动添加对话框 -->
+    <div id="manual-dialog" class="dialog" style="display: none;">
+        <div class="dialog-content">
+            <div class="dialog-header">
+                <h3>手动添加帖子</h3>
+                <button id="close-dialog" class="close-btn">✕</button>
+            </div>
+            <div class="dialog-body">
+                <div class="form-group">
+                    <label>帖子链接</label>
+                    <input type="text" id="manual-link" placeholder="https://www.xiaohongshu.com/explore/...">
+                </div>
+                <div class="form-group">
+                    <label>标题</label>
+                    <input type="text" id="manual-title" placeholder="帖子标题">
+                </div>
+                <div class="form-group">
+                    <label>作者</label>
+                    <input type="text" id="manual-author" placeholder="作者名称">
+                </div>
+                <div class="form-group">
+                    <label>内容摘要</label>
+                    <textarea id="manual-content" rows="3" placeholder="帖子内容摘要..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>关键词（用逗号分隔）</label>
+                    <input type="text" id="manual-keywords" placeholder="AI, ChatGPT, 机器学习">
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <button id="save-manual" class="btn btn-primary">保存</button>
+                <button id="cancel-manual" class="btn btn-secondary">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="db.js"></script>
+    <script src="app.js"></script>
+    <script>
+        // 注册 Service Worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(reg => console.log('Service Worker 注册成功', reg))
+                .catch(err => console.log('Service Worker 注册失败', err));
+        }
+    </script>
+</body>
+</html>
