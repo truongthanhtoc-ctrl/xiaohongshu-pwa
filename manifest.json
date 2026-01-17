@@ -8,27 +8,27 @@
   "theme_color": "#FF2442",
   "icons": [
     {
-      "src": "icons/icon-192.png",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/e/e8/XiaohongshuLOGO.png",
       "sizes": "192x192",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icons/icon-192.png",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/e/e8/XiaohongshuLOGO.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/e/e8/XiaohongshuLOGO.png",
       "sizes": "192x192",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/e/e8/XiaohongshuLOGO.png",
       "sizes": "512x512",
-      "type": "image/jpeg",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "maskable"
     }
   ]
