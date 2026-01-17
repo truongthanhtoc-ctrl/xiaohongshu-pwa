@@ -1,8 +1,10 @@
 {
+    "id": "/",
+    "name": "{
   "id": "/",
-  "name": "小红书AI收集器",
-  "short_name": "AI收集器",
-  "description": "自动收集小红书上所有AI相关的帖子",
+  "name": "Xiaohongshu AI Collector",
+  "short_name": "AI Collector",
+  "description": "Automatically collect AI-related posts on Xiaohongshu",
   "start_url": "index.html",
   "scope": "/",
   "display": "standalone",
@@ -12,41 +14,46 @@
   "icons": [
     {
       "src": "icons/icon-192.png",
-      "sizes": "192x192",
+      "sizes": "1024x1024",
       "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "icons/icon-192.png",
-      "sizes": "192x192",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "1024x1024",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "categories": [
     "productivity",
     "utilities"
   ],
-  "screenshots": [],
   "shortcuts": [
     {
-      "name": "打开小红书",
-      "short_name": "小红书",
-      "description": "打开小红书搜索AI内容",
+      "name": "Open Xiaohongshu",
+      "short_name": "Xiaohongshu",
+      "description": "Open Xiaohongshu to search for AI content",
       "url": "/?action=open",
       "icons": [
         {
           "src": "icons/icon-192.png",
-          "sizes": "192x192",
+          "sizes": "1024x1024",
           "type": "image/png"
         }
       ]
     }
   ]
-}
+    }
