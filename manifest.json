@@ -2,31 +2,36 @@
   "name": "小红书AI收集器",
   "short_name": "AI收集器",
   "description": "自动收集小红书上所有AI相关的帖子",
-  "start_url": "index.html",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#FFFFFF",
   "theme_color": "#FF2442",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "categories": ["productivity", "utilities"],
   "icons": [
     {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/e/e8/XiaohongshuLOGO.png",
+      "src": "icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/e/e8/XiaohongshuLOGO.png",
+      "src": "icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/e/e8/XiaohongshuLOGO.png",
+      "src": "icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/e/e8/XiaohongshuLOGO.png",
+      "src": "icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
