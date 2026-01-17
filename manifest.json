@@ -1,7 +1,7 @@
 {
-  "name": "Xiaohongshu AI Collector",
-  "short_name": "AI Collector",
-  "description": "Automatically collect AI-related posts on Xiaohongshu",
+  "name": "小红书AI收集器",
+  "short_name": "AI收集器",
+  "description": "自动收集小红书上所有AI相关的帖子",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#FFFFFF",
@@ -10,14 +10,26 @@
     {
       "src": "icons/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "maskable"
     },
     {
       "src": "icons/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable"
     }
   ]
 }
