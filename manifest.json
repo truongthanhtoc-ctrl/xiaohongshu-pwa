@@ -1,6 +1,4 @@
 {
-    "id": "/",
-    "name": "{
   "id": "/",
   "name": "Xiaohongshu AI Collector",
   "short_name": "AI Collector",
@@ -56,4 +54,4 @@
       ]
     }
   ]
-    }
+}
